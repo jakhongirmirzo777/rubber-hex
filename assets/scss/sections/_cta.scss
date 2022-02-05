@@ -1,0 +1,128 @@
+.cta {
+  color: var(--color-black);
+  text-align: left;
+  padding: 80px 40px 94px;
+  h2 {
+    font-family: "OpenSansRegular";
+    font-size: 28px;
+    line-height: 130%;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 42px;
+  }
+  &__slider {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 16px;
+    overflow: hidden;
+    scroll-snap-type: both mandatory;
+  }
+  &__slider.active {
+    scroll-snap-type: unset;
+  }
+  li {
+    scroll-snap-align: center;
+    display: inline-block;
+  }
+
+  &__slide {
+    &--top {
+      height: 410px;
+      position: relative;
+      img {
+        background-color: var(--color-gray-light);
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+
+      figcaption {
+        font-family: "OpenSansRegular";
+        padding: 5px;
+        font-size: 12px;
+        line-height: 167.5%;
+        text-align: center;
+        background-color: var(--color-white);
+        position: absolute;
+        top: 8px;
+        left: 8px;
+      }
+    }
+
+    &--bottom {
+      font-family: "OswaldLight";
+      padding: 8px 0;
+      h6 {
+        text-transform: uppercase;
+        font-size: 12px;
+        line-height: 168%;
+        letter-spacing: 0.16em;
+        margin-bottom: 8px;
+      }
+      span {
+        display: block;
+        margin-bottom: 8px;
+      }
+      p {
+        font-size: 12px;
+        line-height: 168%;
+        letter-spacing: 0.16em;
+      }
+    }
+  }
+
+  &__slider__container {
+    position: relative;
+  }
+
+  &__slider__controler {
+    display: none;
+    font-size: 20px;
+    display: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--color-gray-dark);
+    position: absolute;
+    top: 30%;
+    &--left {
+      left: -15px;
+    }
+    &--right {
+      right: -15px;
+    }
+    &:hover {
+      color: var(--color-black);
+    }
+  }
+}
+
+@media (max-width: $size-desktop-small) {
+  .cta {
+    padding: 40px 16px;
+    &__slider {
+      grid-template-columns: repeat(10, calc(100% / 3));
+    }
+  }
+}
+
+@media (max-width: $size-tablet) {
+  .cta {
+    &__slider {
+      grid-template-columns: repeat(10, calc(100% / 2));
+    }
+  }
+}
+
+@media (max-width: $size-mobile) {
+  .cta {
+    &__slide {
+      &--top {
+        height: 209px;
+      }
+    }
+    // &__slider__controler {
+    //   display: block;
+    // }
+  }
+}

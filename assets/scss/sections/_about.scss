@@ -1,0 +1,127 @@
+.about {
+  color: var(--color-white);
+  background-color: var(--color-black);
+  padding: 55px 40px 80px;
+  text-align: left;
+  position: relative;
+  &__container {
+    position: relative;
+    z-index: 2;
+    &--top {
+      font-family: "OpenSansRegular";
+      h1 {
+        font-size: 28px;
+        margin-bottom: 126px;
+        text-transform: uppercase;
+      }
+      p {
+        font-size: 14px;
+        line-height: 167.5%;
+        &:first-of-type {
+          margin-bottom: 80px;
+        }
+      }
+
+      &__figure {
+        img {
+          height: 100%;
+          width: 100%;
+          transform: translateX(40px);
+        }
+      }
+    }
+
+    &--center {
+      font-size: 16px;
+      &--right {
+        padding: 123px 105px;
+      }
+      p {
+        font-family: "OpenSansRegular";
+        margin-bottom: 25px;
+      }
+
+      ul {
+        font-family: "OpenSansBold";
+        line-height: 167.5%;
+      }
+
+      li {
+        margin-bottom: 16px;
+        margin-left: 15px;
+        position: relative;
+        &::before {
+          content: "/";
+          color: var(--color-gold);
+          position: absolute;
+          top: 0;
+          left: -15px;
+        }
+      }
+
+      &__figure {
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    &--bottom {
+      h2 {
+        font-family: "OpenSansBold";
+        font-size: 40px;
+        line-height: 143%;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+      }
+
+      &__figure {
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__lines {
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    &__item {
+      height: 100%;
+      width: 100%;
+      &:not(:last-child) {
+        border-right: 1px solid #292825;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .about {
+    &__lines {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: $size-tablet) {
+  .about {
+    padding: 45px 16px 55px;
+
+    &__container--center--right {
+      padding: 24px 17px;
+    }
+    &__container--bottom {
+      h2 {
+        font-size: 28px;
+      }
+    }
+  }
+}

@@ -18792,6 +18792,7 @@ h6 {
   padding: 55px 40px 80px;
   text-align: left;
   position: relative;
+  overflow-x: hidden;
 }
 
 .about__container {
@@ -18928,7 +18929,7 @@ h6 {
 
 .cta__slider {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(10, 25%);
   grid-template-rows: 1fr;
   grid-column-gap: 16px;
   overflow: hidden;
